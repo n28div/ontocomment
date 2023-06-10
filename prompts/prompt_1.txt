@@ -1,0 +1,11 @@
+{% for d in descriptions %}
+concept: {{ d.class_label }}
+specializations: {% for v in d.facts["superclass of"] %}{{ v.replace("\n", "") }}, {% endfor %}
+generalizations: {% for v in d.facts["subclass of"] %}{{ v.replace("\n", "") }}, {% endfor %}
+definition: {{ d.class_comment }}
+---
+{% endfor %}
+concept: {{ target.class_label }}
+specializations: {% for v in target.facts["superclass of"] %}{{ v.replace("\n", "") }}, {% endfor %}
+generalizations: {% for v in target.facts["subclass of"] %}{{ v.replace("\n", "") }}, {% endfor %}
+definition: 
