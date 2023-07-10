@@ -1,0 +1,13 @@
+{% for d in references %}
+owl:Class: {{ d.label }}
+rdfs:subClassOf: {% for v in d["facts"]["subclass of"] %}{{ v.replace("\n", "") }}, {% endfor %}
+rdfs:domain: {% for v in d["facts"]["is domain of"] %}{{ v.replace("\n", "") }}, {% endfor %}
+rdfs:range: {% for v in d["facts"]["is range of"] %}{{ v.replace("\n", "") }}, {% endfor %}
+rdfs:comment: {{ d.comment }}
+---
+{% endfor %}
+owl:Class: {{ target.label }}
+rdfs:subClassOf: {% for v in target["facts"]["subclass of"] %}{{ v.replace("\n", "") }}, {% endfor %}
+rdfs:domain: {% for v in target["facts"]["is domain of"] %}{{ v.replace("\n", "") }}, {% endfor %}
+rdfs:range: {% for v in target["facts"]["is range of"] %}{{ v.replace("\n", "") }}, {% endfor %}
+rdfs:comment: 

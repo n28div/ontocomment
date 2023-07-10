@@ -1,0 +1,7 @@
+{% for d in references %}
+class: {{ d.label }}
+comment: {{ d.comment }}
+---
+{% endfor %}
+class: {{ target.label }}
+comment: 

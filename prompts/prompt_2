@@ -1,0 +1,11 @@
+{% for d in references %}
+class: {{ d.label }}
+specializations: {% for v in d["facts"]["superclass of"] %}{{ v.replace("\n", "") }}, {% endfor %}
+generalizations: {% for v in d["facts"]["subclass of"] %}{{ v.replace("\n", "") }}, {% endfor %}
+comment: {{ d.comment }}
+---
+{% endfor %}
+concept: {{ target.label }}
+specializations: {% for v in target["facts"]["superclass of"] %}{{ v.replace("\n", "") }}, {% endfor %}
+generalizations: {% for v in target["facts"]["subclass of"] %}{{ v.replace("\n", "") }}, {% endfor %}
+comment: 
