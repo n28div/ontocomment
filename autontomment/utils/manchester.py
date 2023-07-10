@@ -43,21 +43,16 @@ def class_description(ontology: Graph, c: URIRef) -> str:
     iri = IRI.create(str(c))
     c = manager.getOWLDataFactory().getOWLClass(iri)
 
-    desc = defaultdict(list)
-    for x in onto.getSubClassAxiomsForSubClass(c):
-        desc["subclass of"].append(str(renderer.render(x).split("SubClassOf")[-1].strip()))
-    
-    for x in onto.getEquivalentClassesAxioms(c):
-        desc["equivalent to"].append(str(renderer.render(x).split("EquivalentTo")[-1].strip()))
-    
-    for x in onto.getDisjointUnionAxioms(c):
-        desc["disjoint union of"].append(str(renderer.render(x).split("DisjointUnionOf")[-1].strip()))
-    
-    for x in onto.getDisjointClassesAxioms(c):
-        desc["disjoint with"].append(str(renderer.render(x).split("DisjointWith")[-1].strip()))
-    
-    for x in onto.getSubClassAxiomsForSuperClass(c):
-        desc["superclass of"].append(str(renderer.render(x).split("SubClassOf")[0].strip()))
-    
-    return desc
+    desc = {
+        "subclass of": ("SubClassOf", onto.getSubClassAxiomsForSubClass(c)),
+        "equivalent to": ("EquivalentTo", onto.getEquivalentClassesAxioms(c)),
+        "disjoint union of": ("DisjointUnionOf", onto.getDisjointUnionAxioms(c)),
+        "disjoint with": ("DisjointWith", onto.getDisjointClassesAxioms(c)),
+        "superclass of": ("SubClassOf", onto.getSubClassAxiomsForSuperClass(c)),
+    }
+
+    return {
+        k: list(set([str(renderer.render(c).split(x)[-1].strip()) for c in y]))
+        for k, (x, y) in desc.items()
+    }
 
