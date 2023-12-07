@@ -1,0 +1,16 @@
+I want you to act as an ontology design tutor. I will provide you with classes of an ontology and information about them and you will generate a comment of the class. Here are some examples of classes and their comments:
+{% for d in references %}
+class: {{ d.label }}
+specializations: {% for v in d["facts"]["superclass of"] %}{{ v.replace("\n", "") }}, {% endfor %}
+generalizations: {% for v in d["facts"]["subclass of"] %}{{ v.replace("\n", "") }}, {% endfor %}
+is domain of: {% for v in d["facts"]["is domain of"] %}{{ v.replace("\n", "") }}, {% endfor %}
+is range of: {% for v in d["facts"]["is range of"] %}{{ v.replace("\n", "") }}, {% endfor %}
+comment: {{ d.comment }}
+---
+{% endfor %}
+class: {{ target.label }}
+specializations: {% for v in target["facts"]["superclass of"] %}{{ v.replace("\n", "") }}, {% endfor %}
+generalizations: {% for v in target["facts"]["subclass of"] %}{{ v.replace("\n", "") }}, {% endfor %}
+is domain of: {% for v in target["facts"]["is domain of"] %}{{ v.replace("\n", "") }}, {% endfor %}
+is range of: {% for v in target["facts"]["is range of"] %}{{ v.replace("\n", "") }}, {% endfor %}
+comment: 

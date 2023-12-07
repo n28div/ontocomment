@@ -1,0 +1,20 @@
+
+{% if target["facts"]["superclass of"]|length > 0 %}
+  {{ target.label }} 
+  generalises
+  {% for v in target["facts"]["superclass of"] %}{{ v.replace("\n", "") }}, {% endfor %}.
+{% endif %}
+
+{% if target["facts"]["subclass of"]|length > 0 %}
+  {{ target.label }}   
+  specialises 
+  {% for v in target["facts"]["subclass of"] %}{{ v.replace("\n", "") }}, {% endfor %}.
+{% endif %}
+
+{% if target["facts"]["is range of"]|length > 0 %}
+  {% for v in target["facts"]["is range of"] %}{{ v.replace("\n", "") }} {{ target.label }}, {% endfor %}.
+{% endif %}
+
+{% if target["facts"]["is domain of"]|length > 0 %}
+  {% for v in target["facts"]["is domain of"] %}{{ target.label }} {{ v.replace("\n", "") }}, {% endfor %}.
+{% endif %}

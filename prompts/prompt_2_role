@@ -1,3 +1,4 @@
+I want you to act as an ontology design tutor. I will provide you with classes of an ontology and information about them and you will generate a comment of the class. Here are some examples of classes and their comments:
 {% for d in references %}
 class: {{ d.label }}
 specializations: {% for v in d["facts"]["superclass of"] %}{{ v.replace("\n", "") }}, {% endfor %}

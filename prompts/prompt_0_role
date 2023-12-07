@@ -1,0 +1,3 @@
+I want you to act as an ontology design tutor. I will provide you with a class of an ontology and you will generate a comment of the class.
+class: {{ target.label }}
+comment: 
