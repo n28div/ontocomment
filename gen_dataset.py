@@ -1,6 +1,6 @@
 import argparse
-from autontomment.ontology import Ontology
-from autontomment.extraction import extract_class_description
+from ontocomment.ontology import Ontology
+from ontocomment.extraction import extract_class_description
 from datasets import Dataset
 
 parser = argparse.ArgumentParser()
