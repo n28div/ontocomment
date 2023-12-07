@@ -1,0 +1,163 @@
+{
+  "builder_name": "generator",
+  "citation": "",
+  "config_name": "default",
+  "dataset_size": 90386,
+  "description": "",
+  "download_checksums": {},
+  "download_size": 0,
+  "features": {
+    "target": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "target_description": {
+      "comment": {
+        "dtype": "string",
+        "_type": "Value"
+      },
+      "facts": {
+        "disjoint union of": {
+          "feature": {
+            "dtype": "null",
+            "_type": "Value"
+          },
+          "_type": "Sequence"
+        },
+        "disjoint with": {
+          "feature": {
+            "dtype": "null",
+            "_type": "Value"
+          },
+          "_type": "Sequence"
+        },
+        "equivalent to": {
+          "feature": {
+            "dtype": "string",
+            "_type": "Value"
+          },
+          "_type": "Sequence"
+        },
+        "is domain of": {
+          "feature": {
+            "dtype": "null",
+            "_type": "Value"
+          },
+          "_type": "Sequence"
+        },
+        "is range of": {
+          "feature": {
+            "dtype": "null",
+            "_type": "Value"
+          },
+          "_type": "Sequence"
+        },
+        "subclass of": {
+          "feature": {
+            "dtype": "string",
+            "_type": "Value"
+          },
+          "_type": "Sequence"
+        },
+        "superclass of": {
+          "feature": {
+            "dtype": "string",
+            "_type": "Value"
+          },
+          "_type": "Sequence"
+        }
+      },
+      "label": {
+        "dtype": "string",
+        "_type": "Value"
+      }
+    },
+    "references": {
+      "feature": {
+        "dtype": "string",
+        "_type": "Value"
+      },
+      "_type": "Sequence"
+    },
+    "references_description": [
+      {
+        "comment": {
+          "dtype": "string",
+          "_type": "Value"
+        },
+        "facts": {
+          "disjoint union of": {
+            "feature": {
+              "dtype": "null",
+              "_type": "Value"
+            },
+            "_type": "Sequence"
+          },
+          "disjoint with": {
+            "feature": {
+              "dtype": "null",
+              "_type": "Value"
+            },
+            "_type": "Sequence"
+          },
+          "equivalent to": {
+            "feature": {
+              "dtype": "string",
+              "_type": "Value"
+            },
+            "_type": "Sequence"
+          },
+          "is domain of": {
+            "feature": {
+              "dtype": "null",
+              "_type": "Value"
+            },
+            "_type": "Sequence"
+          },
+          "is range of": {
+            "feature": {
+              "dtype": "null",
+              "_type": "Value"
+            },
+            "_type": "Sequence"
+          },
+          "subclass of": {
+            "feature": {
+              "dtype": "string",
+              "_type": "Value"
+            },
+            "_type": "Sequence"
+          },
+          "superclass of": {
+            "feature": {
+              "dtype": "string",
+              "_type": "Value"
+            },
+            "_type": "Sequence"
+          }
+        },
+        "label": {
+          "dtype": "string",
+          "_type": "Value"
+        }
+      }
+    ]
+  },
+  "homepage": "",
+  "license": "",
+  "size_in_bytes": 90386,
+  "splits": {
+    "train": {
+      "name": "train",
+      "num_bytes": 90386,
+      "num_examples": 100,
+      "dataset_name": "generator"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}
